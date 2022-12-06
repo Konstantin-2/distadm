@@ -80,7 +80,7 @@ Move created file to isolated computer or computer in isolated LAN, run distadm 
 
 $ sudo distadm read-packet &lt;filename&gt;
 
-Do not forget do the same backwards to move execution results to the first computers.
+Do not forget do the same backwards to move execution results to the first computer.
 
 # More
 
