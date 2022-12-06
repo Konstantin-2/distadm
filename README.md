@@ -3,7 +3,7 @@
 Command distribution paths may be complex. For example, administrator inputs new command to Computer #1 in LAN #1. As soon as Computer #2 in LAN #1 become online, command is copied there. After administrator use flash-drive to copy command from Computer #2 in LAN #1 to Computer #3 in LAN #2. After it command automatically copied to Computer #4 in LAN #2 and so on.
 Main difficulty solved in “distadm” is to be sure that every command be delivered to every computer in group and that accumulation of commands will not lead to overflow i.e. executed commands should be deleted to restore disk space.
 
-#Installation
+# Installation
 Installation on computers with graphical interface
 make clean
 sudo make install -j
