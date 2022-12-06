@@ -47,38 +47,38 @@ $ sudo distadm -I
 ## Add new computer in LAN
 On any computer in group run distadm and press “Write online invite” button. Or run
 
-$ sudo distadm write-online-invite <filename>
+$ sudo distadm write-online-invite &lt;filename&gt;
 
 Then move created file to new computer to join to group.
 
 Then on new computer run distadm and press “Join to group” button. Or run
 
-$ sudo distadm -J <filename>
+$ sudo distadm -J &lt;filename&gt;
 
 ## Add new isolated computer or computer in other LAN
 On any computer in group run distadm and press “Write offline invite” button. Or run
 
-$ sudo distadm write-offline-invite <filename>
+$ sudo distadm write-offline-invite &lt;filename&gt;
 
 Then move created file to new computer to join to group.
 
 Then on new computer run distadm and press “Join to group” button. Or run
 
-$ sudo distadm -J <filename>
+$ sudo distadm -J &lt;filename&gt;
 
 Invite-file will be modified. It can be used to join many computers sequentially. At the end move invite-file to first computer, run distadm and press “Finalize invite” button. Or run
 
-$ sudo distadm finalize-invite <filename>
+$ sudo distadm finalize-invite &lt;filename&gt;
 
 # Distribute commands between isolated segments
 
 On any computer in group run distadm and press “Write packet” button. Or run
 
-$ sudo distadm write-packet <filename>
+$ sudo distadm write-packet &lt;filename&gt;
 
 Move created file to isolated computer or computer in isolated LAN, run distadm and press “Read packet” button. Or run
 
-$ sudo distadm read-packet <filename>
+$ sudo distadm read-packet &lt;filename&gt;
 
 Do not forget do the same backwards to move execution results to the first computers.
 
