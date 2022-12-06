@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Distributed Administrator Info
+Name[ru]=Информация распределенного администратора
+Icon=/usr/local/share/distadm/distadm-info.png
+Exec=/usr/local/sbin/distadm -i
+Terminal=false

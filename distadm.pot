@@ -1,0 +1,387 @@
+msgid "#"
+msgstr ""
+
+msgid "Add file"
+msgstr ""
+
+msgid "Add user"
+msgstr ""
+
+msgid "Antivirus update"
+msgstr ""
+
+msgid "Available commands"
+msgstr ""
+
+msgid "Bad UUID"
+msgstr ""
+
+msgid "Bad answer from daemon"
+msgstr ""
+
+msgid "Bad command found"
+msgstr ""
+
+msgid "Bad invite"
+msgstr ""
+
+msgid "Bad protocol version"
+msgstr ""
+
+msgid "Bad user name"
+msgstr ""
+
+msgid "Can't connect to server"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel offline invitation"
+msgstr ""
+
+msgid "Cannot open config file"
+msgstr ""
+
+msgid "Choose a file"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Command"
+msgstr ""
+
+msgid "Command queued to execute"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "Computer"
+msgstr ""
+
+msgid "Console"
+msgstr ""
+
+msgid "Create password"
+msgstr ""
+
+msgid "Damaged file"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "Delete node"
+msgstr ""
+
+msgid "Delete user"
+msgstr ""
+
+msgid "Directory queued to delete"
+msgstr ""
+
+msgid "Do you want to cancel invite?"
+msgstr ""
+
+msgid "Do you want to re-initialize?"
+msgstr ""
+
+msgid "Enter password"
+msgstr ""
+
+msgid "Enter password for invite file"
+msgstr ""
+
+msgid "Error add user"
+msgstr ""
+
+msgid "Error create file"
+msgstr ""
+
+msgid "Error execute command"
+msgstr ""
+
+msgid "Error open file"
+msgstr ""
+
+msgid "Error read"
+msgstr ""
+
+msgid "Error read file"
+msgstr ""
+
+msgid "Error save file"
+msgstr ""
+
+msgid "Error set password for user"
+msgstr ""
+
+msgid "Error write file"
+msgstr ""
+
+msgid "Execute command"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "File added"
+msgstr ""
+
+msgid "File not found"
+msgstr ""
+
+msgid "File not specified"
+msgstr ""
+
+msgid "File queued to delete"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "Finalize invitation"
+msgstr ""
+
+msgid "Forced"
+msgstr ""
+
+msgid "Group UUID"
+msgstr ""
+
+msgid "Group already initialized."
+msgstr ""
+
+msgid "Group not initialized"
+msgstr ""
+
+msgid "Group not initialized. Do you want to initialize it?"
+msgstr ""
+
+msgid "Hostname"
+msgstr ""
+
+msgid "Invitation cancelled"
+msgstr ""
+
+msgid "Invitation finalized"
+msgstr ""
+
+msgid "Invite is not written"
+msgstr ""
+
+msgid "Invite written"
+msgstr ""
+
+msgid "Join to group"
+msgstr ""
+
+msgid "Local"
+msgstr ""
+
+msgid "Log is cleared"
+msgstr ""
+
+msgid "Net Messages Counter"
+msgstr ""
+
+msgid "New command"
+msgstr ""
+
+msgid "New group"
+msgstr ""
+
+msgid "New login"
+msgstr ""
+
+msgid "No new nodes"
+msgstr ""
+
+msgid "Node"
+msgstr ""
+
+msgid "Node UUID"
+msgstr ""
+
+msgid "Node UUID collision found. You should reinitialize this node."
+msgstr ""
+
+msgid "Node already write invite. Do you want to cancel previous invite and write new one?"
+msgstr ""
+
+msgid "Node can be deleted"
+msgstr ""
+
+msgid "Node file already exists."
+msgstr ""
+
+msgid "Node file damaged"
+msgstr ""
+
+msgid "Node file not found"
+msgstr ""
+
+msgid "Node is not initialized"
+msgstr ""
+
+msgid "Node joined to group"
+msgstr ""
+
+msgid "Node not found"
+msgstr ""
+
+msgid "Node not specified"
+msgstr ""
+
+msgid "Node queued to delete"
+msgstr ""
+
+msgid "Node status"
+msgstr ""
+
+msgid "Nodes"
+msgstr ""
+
+msgid "Not implemented"
+msgstr ""
+
+msgid "Online"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Packet read"
+msgstr ""
+
+msgid "Packet written"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password is different. Repeat again"
+msgstr ""
+
+msgid "Passwords are different"
+msgstr ""
+
+msgid "Queue"
+msgstr ""
+
+msgid "Queue length"
+msgstr ""
+
+msgid "Read packet"
+msgstr ""
+
+msgid "Read-write packet"
+msgstr ""
+
+msgid "Read-write packet again"
+msgstr ""
+
+msgid "Repeat password"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
+msgid "Results are cleared"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
+msgid "S.M.A.R.T."
+msgstr ""
+
+msgid "Save file damaged. Load from backup."
+msgstr ""
+
+msgid "Saved"
+msgstr ""
+
+msgid "Scanned"
+msgstr ""
+
+msgid "This node is not inviter"
+msgstr ""
+
+msgid "UUID"
+msgstr ""
+
+msgid "UUID collision"
+msgstr ""
+
+msgid "Unknown argument"
+msgstr ""
+
+msgid "Unrecognized line in config file"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid ""
+"Usage: distadm <command>\n"
+"Execute command over group of computers\n"
+"Commands:\n"
+"  -d, --daemon             run in daemon mode\n"
+"  -i, --info               show nodes info\n"
+"  -t, --textmode           run in text mode\n"
+"  -I, --initialize         initialize new group\n"
+"  -J, --join <filename>    join to group by file\n"
+"  -c, --config <filename>  use optional config file\n"
+"  -v, --verbose            show additional debug info\n"
+"      --help               show this help\n"
+"      --version            show version info\n"
+"If no command specified, program run in interactive mode.\n"
+"In textmode You can type internal commands.\n"
+"List of them is printed if type 'help'.\n"
+"You can also execute internal command if run program with this command\n"
+"as parameter.\n"
+"Report bugs to: oks-mgn@mail.ru\n"
+"General help using GNU software: <https://www.gnu.org/gethelp/>\n"
+msgstr ""
+
+msgid "User added"
+msgstr ""
+
+msgid "User not added"
+msgstr ""
+
+msgid "User queued to delete"
+msgstr ""
+
+msgid "Username not specified"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Warning!"
+msgstr ""
+
+msgid "Write offline invite"
+msgstr ""
+
+msgid "Write online invite"
+msgstr ""
+
+msgid "Write packet"
+msgstr ""
+
+msgid "Wrong file"
+msgstr ""
+
+msgid "smartctl not found"
+msgstr ""

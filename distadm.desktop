@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Distributed Administrator
+Name[ru]=Распределенный администратор
+Icon=/usr/local/share/distadm/distadm.png
+Exec=pkexec /usr/local/sbin/distadm
+Terminal=false

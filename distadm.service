@@ -1,0 +1,9 @@
+[Unit]
+Description=Distributed Administrator
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/sbin/distadm -d
+
+[Install]
+WantedBy=multi-user.target

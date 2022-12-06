@@ -1,0 +1,302 @@
+.\" Manpage for distadm.
+.\" Contact oks-mgn@mail.ru to correct errors or typos.
+.TH DISTADM 1 "25 November 2022" "1.0" "distadm man page"
+
+.SH NAME
+distadm \- Distributed Administrator
+
+.SH SYNOPSIS
+.B distadm
+\fI[<options>]\fR
+\fI[<command>]\fR
+
+.SH DESCRIPTION
+.B distadm
+help to maintain group of computers.
+.br
+Such computers are called \fInodes\fR and grouped to decentralized network.
+Administrator can enter commands on any of nodes.
+These commands will be executed on all nodes in group.
+For example administrator can enter program name with optional arguments,
+request node statuses, add file to distribute between nodes or create new account.
+Nodes can be connected over network.
+Currently IPv6 only supported with media-local scope, i.e. nodes can connect via switch but not outside of router.
+Information can also be distributed between nodes manually by files saved on removable media (flash drives, optical drives).
+Program has graphical frontend (GTK-3) and text console support with history and autocompletion by Tab key.
+
+.SH OPTIONS
+Mandatory arguments to long options are mandatory for short options too.
+.TP
+\fB\-d\fR, \fB--daemon\fR
+Run in daemon mode.
+.TP
+\fB\-i\fR, \fB--info\fR
+Show nodes antivirus and S.M.A.R.T. info
+.TP
+\fB\-t\fR, \fB--textmode\fR
+Run program in text mode even in graphical environment.
+.TP
+\fB\-I\fR, \fB--initialize\fR
+Initialize new group. It will create \fI/var/local/distadm\fR directory and files there.
+.TP
+\fB\-J\fR, \fB--join\fR=\fITO\fR
+Join to group by invite file. See \fIjoin-group\fR command.
+.TP
+\fB\-c\fR, \fB--config\fR=\fICONFIG\fR
+Use alternative config file. By default \fI/usr/local/etc/distadm\fR used.
+.TP
+\fB\-v\fR, \fB--verbose\fR
+Show additional debug info.
+.TP
+\fB--help\fR
+show help page.
+.TP
+\fB--version\fR
+show version info.
+
+.SH COMMANDS
+.TP
+\fBaddfile\fR \fR\fIFILE\fR \fR\fI[DIRECTORY]\fR
+Add file to program.
+File will be distributed to all nodes (computers) and be placed to program's folder, \fI/var/local/distadm/files\fR by default.
+If \fIDIRECTORY\fR specified, file will be placed to that subdirectory.
+.TP
+\fBadduser\fR \fR\fIUSERNAME\fR
+Add new user to every node. It will be added via \fIadduser\fR program.
+.TP
+\fBcancel-invite\fR
+Cancel \fIinviter\fR node status.
+Current node status is shown by \fIstatus\fR command.
+When offline invite file written, status changed from \fIwork\fR to \fIinviter\fR.
+When offline invite done using \fIfinalize-invite\fR status changed back to \fIwork\fR.
+If offline invite file lost, \fIwork\fR status can be restored by \fIcancel-invite\fR command.
+.TP
+\fBdeldir\fR \fR\fIDIRNAME\fR
+Delete directory from program's home directories on all nodes recursively.
+By default home directory is \fI/var/local/distadm/files\fR.
+.TP
+\fBdelexec\fR \fR\fI[PROGRAM]\fR
+Delete program execution outputs. See \fIexec\fR.
+If \fIPROGRAM\fR specified, delete results for that program only.
+.TP
+\fBdelfile\fR \fR\fIFILE\fR
+Delete file from all nodes.
+.TP
+\fBdellog\fR
+Delete distadm internal log (see \fIshowlog\fR).
+.TP
+\fBdelnode\fR \fR\fINODE\fR \fR\fI[force]\fR
+Delete node from group.
+\fINODE\fR is node UUID or hostname.
+List of known nodes is printed by \fIlistnodes\fR command.
+When specified node receives command to delete, it changes its status to \fIdeleting\fR.
+After that it is required to write packet from that node (see \fIwrite-packet\fR).
+It will contain "bye" message.
+When other nodes receive this message, they will erase record about deleted node.
+\fIlistnodes\fR command will not shows deleted node.
+After that deleted node program can be stopped and it's files can be erased.
+If access to deleted node is not possible (for ex. computer damaged), \fR\fIforce\fR flag can be used.
+But this can lead to nasty results: last commands from deleted node will be executed only on some part of group nodes but not everywhere.
+.TP
+\fBdeluser\fR \fR\fIUSERNAME\fR
+Delete user from nodes.
+It is possible to delete users only added by \fIadduser\fR command.
+To delete other users use \fIexec\fR \fIdeluser\fR \fI<username>\fR command.
+.TP
+\fBantivirus\fR
+Show antivirus info.
+.TP
+\fBexec\fR \fR\fIPROGRAM\fR \fR\fI[OPTIONS]\fR
+Execute program on every node in group.
+It uses 'sh' shell so it is possible to use special characters like '<', '>', '|', '&&', etc.
+Work directory will be program's directory, \fI/var/local/distadm/files\fR by default.
+Another way to exeсute commands is to write temporary script file,
+distribute it via group nodes by \fIaddfile\fR command,
+execute by \fIexec\fR and erase by \fIdelfile\fR, for example:
+.sp
+# echo '#/bin/bash' > my.sh
+.br
+# echo 'echo test > /tmp/test && sleep 1' >> my.sh
+.br
+# distadm addfile my.sh
+.br
+# distadm exec chmod 0700 my.sh
+.br
+# distadm exec ./my.sh
+.br
+# distadm delfile my.sh
+.br
+# rm my.sh
+
+.TP
+\fBexit\fR
+Exit from interactive mode. Ctrl+D is also supported.
+.TP
+\fBfinalize-invite\fR \fR\fIFILE\fR
+When other nodes joined to group via offline invite file (see \fIjoin-group\fR command),
+this file will contains info about new nodes and should be returned to inviter node.
+This node will open the file by \fIfinalize-invite\fR, read info about new nodes
+and generate "welcome" message. This message can be placed into packet file by \fIwrite-packet\fR command.
+When new node read packet with "welcome" message and it's identifier, it will change its status to 'work'.
+.TP
+\fBhelp\fR
+Show list of available commands.
+.TP
+\fBjoin-group\fR \fR\fIFILE\fR
+Join node (this computer) to existing group using invite file.
+This file can be created using \fIwrite-online-invite\fR or \fIwrite-offline-invite\fR commands.
+If file is online-invite, node status will be 'uninitialized' and it will wait for network connections to group.
+After successful connection it's status changed to 'work'.
+If file is offline-invite, node status will be 'partially-initialized',
+node will write additional info to invite file and will wait for packet files from group with 'welcome' message.
+(see \fIfinalize-invite\fR and \fIread-packet\fR command).
+After first packet read it's status changed to 'work'.
+.TP
+\fBlistfiles\fR
+List files loaded to program directory by \fIaddfile\fR command.
+.TP
+\fBlistnodes\fR
+List nodes in group.
+.TP
+\fBlistonline\fR
+List nodes and info when they run last time. Useful to find dead nodes.
+.TP
+\fBlistusers\fR
+List users added to system by \fIadduser\fR command.
+.TP
+\fBlocal-id\fR
+Print local node and group UUID.
+.TP
+\fBnodesinfo\fR
+Print nodes and matrix. Useful to find damaged nodes.
+.TP
+\fBqueue\fR
+List nodes and count of messages to them.
+Big number means there are many messages to specified node.
+They can be passed over network connections or packet files (see \fIwrite-packet\fR command).
+Don't forget to pass information back from that node.
+.TP
+\fBread-packet\fR \fR\fIFILE\fR
+Read packet file. Such files contain new commands to execute, new messages, node statuses and other info.
+.TP
+\fBshow-exec\fR \fR\fI[PROGRAM]\fR
+Show output of programs executed by \fIexec\fR command.
+If \fIPROGRAM\fR is specified, show output to that program only.
+.TP
+\fBshowlog\fR
+Show distadm log. Currently it contains only info about deleted nodes (see \fIdelnode\fR).
+.TP
+\fBstatus\fR
+Show node status:
+.RS
+.sp
+\fBuninitialized\fR node joined by online-invite file and waits for network connections.
+.sp
+\fBpartially-initialized\fR node joined by offline-invite file and waits for packet files.
+.sp
+\fBwork\fR node work ok, main mode.
+.sp
+\fBinviter\fR node is offline inviter so it uses additional resources (see \fIwrite-offline-invite\fR, \fIfinalize-invite\fR commands).
+.sp
+\fBdeleting\fR node is deleted (see \fIdelnode\fR command). It will not create or receive new commands.
+.sp
+\fBdeleted\fR same as \fIdeleting\fR but program will exit immediately.
+.RE
+.TP
+\fBstored-commands\fR
+Print commands stored in this node.
+They are passed to other nodes over network, saved to packet files by \fIwrite-packet\fR commands,
+and will be erased when this node has executed them and knows that all other nodes also knows these commands.
+.TP
+\fBwrite-offline-invite\fR \fR\fIFILE\fR
+Write file that contains all information required to initialize new nodes in group.
+This file can be huge cause it contains all files added by \fIaddfile\fR command.
+.TP
+\fBwrite-online-invite\fR \fR\fIFILE\fR
+Write file that contains group UUID.
+That is enough to connect new node to other nodes over network and receive all information required to initialize.
+.TP
+\fBwrite-packet\fR \fR\fIFILE\fR
+Write packet file with new commands, messages, node statuses and other info.
+This file can be huge cause it contains new files added by \fIaddfile\fR command.
+Every time this file created it contains all information to other nodes,
+so, it is not a problem if such file accidentally lost cause it can be created again.
+It is advisable to write packet directly to removable media (flash drives) cause program check
+available free space and correctly stop write file when no more space left.
+
+.SH EXAMPLES
+Run as daemon:
+.sp
+.RS 4
+distadm -d
+.RE
+.sp
+
+Run interactive:
+.RS 4
+.sp
+distadm
+.RE
+
+Create new group:
+.RS 4
+.sp
+distadm -I
+.RE
+
+Write offline invite file named my-init.bin:
+.RS 4
+.sp
+distadm write-offline-invite my-init.bin
+.RE
+
+Join new node to existing group using invite file named my-init.bin:
+.RS 4
+.sp
+distadm -J my-init.bin
+.RE
+
+Finalize offline invitation on inviter node using invite file named my-init.bin:
+.RS 4
+.sp
+distadm finalize-invite my-init.bin
+.RE
+
+Write packet file my.pkt to distribute via nodes (using flash drives, cd-rom, etc):
+.RS 4
+.sp
+distadm write-packet my.pkt
+.RE
+
+Read packet file my.pkt:
+.RS 4
+.sp
+distadm read-packet my.pkt
+.RE
+
+Install gzip:
+.RS 4
+.sp
+distadm exec apt install gzip
+.RE
+
+Install custom my.deb:
+.RS 4
+.sp
+distadm addfile my.deb
+.br
+distadm exec dpkg -i my.deb
+.RE
+
+Print disk space usage:
+.sp
+.RS 4
+distadm exec df
+.br
+distadm showexec
+.RE
+
+.SH BUGS
+No known bugs yet.
+.SH AUTHOR
+Oshepkov Konstantin (oks-mgn@mail.ru)

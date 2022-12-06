@@ -1,0 +1,9 @@
+libreadline-dev
+uuid-dev
+zlib1g-dev
+libbsd-dev
+libmd-dev
+libgnutls28-dev
+libjsoncpp-dev
+pkgconf
+hashdeep
