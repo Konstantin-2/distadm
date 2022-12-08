@@ -1,0 +1,11 @@
+Package: distadm-console
+Version: 1.0
+Maintainer: Oshepkov Konstantin <oks-mgn@mail.ru>
+Architecture: amd64
+Section: utils
+Description: Программа для управления компьютерами (версия только для консоли)
+Depends: libuuid1, libjsoncpp25, libgnutls30, libmd0, libbsd0, libz1, libreadline8, libsigc++-2.0-0v5, libstdc++6, libgcc-s1, libc6
+Conflicts: distadm
+Pre-Depends: debconf
+Installed-Size: 940
+Priority: optional

@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$1" in
+remove)
+	systemctl stop distadm || true
+	systemctl disable distadm || true
+esac

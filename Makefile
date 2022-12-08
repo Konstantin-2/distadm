@@ -59,7 +59,7 @@ ru/LC_MESSAGES/$(EXECUTABLE).mo : ru/$(EXECUTABLE).po
 i18n : ru/LC_MESSAGES/$(EXECUTABLE).mo
 
 clean :
-	$(RM) *.o $(EXECUTABLE) ru/$(EXECUTABLE).po~ ru/LC_MESSAGES/$(EXECUTABLE).mo $(EXECUTABLE).deb $(EXECUTABLE)-console.deb
+	$(RM) *.o $(EXECUTABLE) ru/$(EXECUTABLE).po~ ru/LC_MESSAGES/$(EXECUTABLE).mo
 	$(RM) -r deb
 
 run : $(EXECUTABLE)

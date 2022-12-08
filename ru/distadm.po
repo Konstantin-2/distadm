@@ -1,0 +1,425 @@
+# Russian translations for distadm package.
+# Copyright (C) 2022 Oshepkov Konstantin
+# This file is distributed under the same license as the distadm package.
+#  <oks-mgn@mail.ru>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: distadm 1.0\n"
+"Report-Msgid-Bugs-To: oks-mgn@mail.ru\n"
+"POT-Creation-Date: 2022-08-20 00:26+0500\n"
+"PO-Revision-Date: 2022-11-25 00:00+0500\n"
+"Last-Translator: <oks-mgn@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "#"
+msgstr "№"
+
+msgid "Add file"
+msgstr "Добавить файл"
+
+msgid "Add user"
+msgstr "Добавить пользователя"
+
+msgid "Antivirus update"
+msgstr "Базы антивируса"
+
+msgid "Available commands"
+msgstr "Доступные команды"
+
+msgid "Bad UUID"
+msgstr "Неправильный UUID"
+
+msgid "Bad answer from daemon"
+msgstr "Неверный ответ от сервера"
+
+msgid "Bad command found"
+msgstr "Обнаружена неправильная команда"
+
+msgid "Bad invite"
+msgstr "Неверное приглашение"
+
+msgid "Bad protocol version"
+msgstr "Неверная версия протокола"
+
+msgid "Bad user name"
+msgstr "Некорректное имя пользователя"
+
+msgid "Can't connect to server"
+msgstr "Не могу подключиться к серверу"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Cancel offline invitation"
+msgstr "Отменить оффлайн приглашение"
+
+msgid "Cannot open config file"
+msgstr "Не могу открыть файл"
+
+msgid "Choose a file"
+msgstr "Выберите файл"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Command"
+msgstr "Команда"
+
+msgid "Command queued to execute"
+msgstr "Команда добавлена в очередь на выполнение"
+
+msgid "Commands"
+msgstr "Команды"
+
+msgid "Computer"
+msgstr "Компьютер"
+
+msgid "Console"
+msgstr "Консоль"
+
+msgid "Create password"
+msgstr "Задайте пароль"
+
+msgid "Damaged file"
+msgstr "Поврежденный файл"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete file"
+msgstr "Удалить файл"
+
+msgid "Delete node"
+msgstr "Удалить узел"
+
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+msgid "Directory queued to delete"
+msgstr "Каталог добавлен в очередь на выполнение"
+
+msgid "Do you want to cancel invite?"
+msgstr "Вы хотите отменить старое приглашение?"
+
+msgid "Do you want to re-initialize?"
+msgstr "Вы хотите инициализировать заново?"
+
+msgid "Enter password"
+msgstr "Введите пароль"
+
+msgid "Enter password for invite file"
+msgstr "Введите пароль для файла приглашения"
+
+msgid "Error add user"
+msgstr "Ошибка при добавлении пользователя"
+
+msgid "Error create file"
+msgstr "Ошибка при создании файла"
+
+msgid "Error execute command"
+msgstr "Ошибка при выполнении команды"
+
+msgid "Error open file"
+msgstr "Ошибка при открытии файла"
+
+msgid "Error read"
+msgstr "Ошибка при чтении"
+
+msgid "Error read file"
+msgstr "Ошибка при чтении файла"
+
+msgid "Error save file"
+msgstr "Ошибка при сохранении файла"
+
+msgid "Error set password for user"
+msgstr "Ошибка при задании пароля для пользователя"
+
+msgid "Error write file"
+msgstr "Ошибка при записи в файл"
+
+msgid "Execute command"
+msgstr "Выполнить команду"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "File added"
+msgstr "Файл добавлен"
+
+msgid "File not found"
+msgstr "Файл не найден"
+
+msgid "File not specified"
+msgstr "Файл не указан"
+
+msgid "File queued to delete"
+msgstr "Файл добавлен в очередь на удаление"
+
+msgid "Files"
+msgstr "Файлы"
+
+msgid "Finalize invitation"
+msgstr "Завершение приглашение"
+
+msgid "Forced"
+msgstr "Принудительно"
+
+msgid "Group UUID"
+msgstr "Идентификатор группы"
+
+msgid "Group already initialized."
+msgstr "Группа уже инициализирована"
+
+msgid "Group not initialized"
+msgstr "Группа не инициализирована"
+
+msgid "Group not initialized. Do you want to initialize it?"
+msgstr "Группа не инициализирована. Вы хотите инициализировать ее?"
+
+msgid "Hostname"
+msgstr "Имя компьютера"
+
+msgid "Invitation cancelled"
+msgstr "Приглашение отменено"
+
+msgid "Invitation finalized"
+msgstr "Приглашения завершены"
+
+msgid "Invite is not written"
+msgstr "Приглашение не записано"
+
+msgid "Invite written"
+msgstr "Приглашение записано"
+
+msgid "Join to group"
+msgstr "Присоединиться к группе"
+
+msgid "Local"
+msgstr "Локально"
+
+msgid "Log is cleared"
+msgstr "Журнал очищен"
+
+msgid "Net Messages Counter"
+msgstr "Счетчик сетевых пакетов"
+
+msgid "New command"
+msgstr "Новая команда"
+
+msgid "New group"
+msgstr "Новая группа"
+
+msgid "New login"
+msgstr "Новое имя пользователя"
+
+msgid "No new nodes"
+msgstr "Нет новых узлов"
+
+msgid "Node"
+msgstr "Узел"
+
+msgid "Node UUID"
+msgstr "Идентификатор узла"
+
+msgid "Node UUID collision found. You should reinitialize this node."
+msgstr "Обнаружена коллизия идентификаторов узлов. Этот узел будет переинициализирован."
+
+msgid "Node already write invite. Do you want to cancel previous invite and write new one?"
+msgstr "Узел уже отправил приглашение. Вы хотите его отменить и создать новое?"
+
+msgid "Node can be deleted"
+msgstr "Узел может быть удален"
+
+msgid "Node file already exists."
+msgstr "Файл узла уже имеется."
+
+msgid "Node file damaged"
+msgstr "Файл узла поврежден"
+
+msgid "Node file not found"
+msgstr "Файл узла не найден"
+
+msgid "Node is not initialized"
+msgstr "Узел не инициализирован"
+
+msgid "Node joined to group"
+msgstr "Узел присоединен к группе"
+
+msgid "Node not found"
+msgstr "Узел не найден"
+
+msgid "Node not specified"
+msgstr "Узел не указан"
+
+msgid "Node queued to delete"
+msgstr "Узел добавлен в очередь на удаление"
+
+msgid "Node status"
+msgstr "Статус узла"
+
+msgid "Nodes"
+msgstr "Узлы"
+
+msgid "Not implemented"
+msgstr "Не реализовано"
+
+msgid "Online"
+msgstr "Онлайн"
+
+msgid "Open"
+msgstr "Открыть"
+
+msgid "Packet read"
+msgstr "Пакет прочитан"
+
+msgid "Packet written"
+msgstr "Пакет записан"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Password is different. Repeat again"
+msgstr "Пароль отличается. Повторите заново"
+
+msgid "Passwords are different"
+msgstr "Пароли отличаются"
+
+msgid "Queue"
+msgstr "Очередь"
+
+msgid "Queue length"
+msgstr "Длина очереди"
+
+msgid "Read packet"
+msgstr "Прочитать пакет"
+
+msgid "Read-write packet"
+msgstr "Прочитать-записать пакет"
+
+msgid "Read-write packet again"
+msgstr "Повторить чтение-запись пакета"
+
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+msgid "Result"
+msgstr "Результат"
+
+msgid "Results are cleared"
+msgstr "Результаты очищены"
+
+msgid "Retry"
+msgstr "Повторить"
+
+msgid "S.M.A.R.T."
+msgstr "S.M.A.R.T."
+
+msgid "Save file damaged. Load from backup."
+msgstr "Файл сохранения поврежден. Загрузка из резервной копии"
+
+msgid "Saved"
+msgstr "Сохранено"
+
+msgid "Scanned"
+msgstr "Проверка"
+
+msgid "This node is not inviter"
+msgstr "Этот узел не является приглашающим"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "UUID collision"
+msgstr "Коллизия идентификаторов UUID"
+
+msgid "Unknown argument"
+msgstr "Неизвестный аргумент"
+
+msgid "Unrecognized line in config file"
+msgstr "Нераспознанная строка в файле конфигурации"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid ""
+"Usage: distadm <command>\n"
+"Execute command over group of computers\n"
+"Commands:\n"
+"  -d, --daemon             run in daemon mode\n"
+"  -i, --info               show nodes info\n"
+"  -t, --textmode           run in text mode\n"
+"  -I, --initialize         initialize new group\n"
+"  -J, --join <filename>    join to group by file\n"
+"  -c, --config <filename>  use optional config file\n"
+"  -v, --verbose            show additional debug info\n"
+"      --help               show this help\n"
+"      --version            show version info\n"
+"If no command specified, program run in interactive mode.\n"
+"In textmode You can type internal commands.\n"
+"List of them is printed if type 'help'.\n"
+"You can also execute internal command if run program with this command\n"
+"as parameter.\n"
+"Report bugs to: oks-mgn@mail.ru\n"
+"General help using GNU software: <https://www.gnu.org/gethelp/>\n"
+msgstr ""
+"Использование: distadm <command>\n"
+"Выполняет команды на группе компьютеров\n"
+"Команды:\n"
+"  -d, --daemon             запуск в режиме сервера\n"
+"  -i, --info               показать информацию антивирусе и S.M.A.R.T. узлов\n"
+"  -t, --textmode           запуск в текстовом режиме\n"
+"  -I, --initialize         инициализировать новую группу\n"
+"  -J, --join <filename>    присоединиться к группе с помощью файла\n"
+"  -c, --config <filename>  использовать другой файл конфигурации\n"
+"  -v, --verbose            показывать отладочную информацию\n"
+"      --help               показать эту справку\n"
+"      --version            показать версию программа\n"
+"Если команда не указана, программа запускается в интерактивном режиме.\n"
+"В текстовом режиме Вы можете печатать внутренние команды для выполнения.\n"
+"Для просмотра их списка наберите 'help'.\n"
+"Вы также можете выполнять внутренние команды если укажете их в качестве\n"
+"параметра программы\n"
+"Адрес для сообщений об ошибках: oks-mgn@mail.ru\n"
+"General help using GNU software: <https://www.gnu.org/gethelp/>\n"
+
+msgid "User added"
+msgstr "Пользователь добавлен"
+
+msgid "User not added"
+msgstr "Пользователь не добавлен"
+
+msgid "User queued to delete"
+msgstr "Пользователь добавлен в очередь на удаление"
+
+msgid "Username not specified"
+msgstr "Не указано имя пользователя"
+
+msgid "Users"
+msgstr "Пользователи"
+
+msgid "Warning!"
+msgstr "Внимание!"
+
+msgid "Write offline invite"
+msgstr "Записать оффлайн приглашение"
+
+msgid "Write online invite"
+msgstr "Записать онлайн приглашение"
+
+msgid "Write packet"
+msgstr "Записать пакет"
+
+msgid "Wrong file"
+msgstr "Не правильный файл"
+
+msgid "smartctl not found"
+msgstr "smartctl не найден"
