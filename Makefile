@@ -19,8 +19,14 @@ srcdir ?= .
 
 # for console version
 LDFLAGS += -Wall -Wl,-pie -flto -pipe -lpthread -luuid `pkg-config --libs jsoncpp gnutls libmd libbsd zlib readline`
-CXXFLAGS += -std=c++20 -pipe -I$(srcdir) `pkg-config --cflags jsoncpp gnutls libmd libbsd zlib` -O2 -march=native -D NDEBUG -DDATAROOTDIR=\"$(datarootdir)\" -D CONFIG_FILE=\"$(sysconfdir)/$(EXECUTABLE)\" -D DIR_LOCALSTATE=\"$(localstatedir)/$(EXECUTABLE)\" -D RUN_DIR=\"$(runstatedir)\" -D SHARE_DIR=\"$(datarootdir)/$(EXECUTABLE)\" -fpie
-#CXXFLAGSD = $(CXXFLAGS) -O0 -Wall -ggdb -U NDEBUG
+CXXFLAGS += -std=c++20 -pipe -I$(srcdir) `pkg-config --cflags jsoncpp gnutls libmd libbsd zlib` -O2 -D NDEBUG -DDATAROOTDIR=\"$(datarootdir)\" -D CONFIG_FILE=\"$(sysconfdir)/$(EXECUTABLE)\" -D DIR_LOCALSTATE=\"$(localstatedir)/$(EXECUTABLE)\" -D RUN_DIR=\"$(runstatedir)\" -D SHARE_DIR=\"$(datarootdir)/$(EXECUTABLE)\" -fpie
+
+# Uncomment this to optimize to your computer
+#CXXFLAGS += -march=native
+
+# Uncomment this to compule debug version
+#CXXFLAGS = $(CXXFLAGS) -O0 -Wall -ggdb -U NDEBUG
+
 OBJS = alarmer.o bdmsg.o ccstream.o cmd_local.o commands.o config.o coremt.o corenet.o core.o cryptkey.o daemon.o incm.o interactive.o locdatetime.o main.o network.o sha.o showdebug.o tmpdir.o usernames.o utils.o uuid.o warn.o utils_iface.o
 
 # for GTK version
