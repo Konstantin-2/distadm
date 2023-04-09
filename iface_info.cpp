@@ -108,7 +108,7 @@ void iface_info(int argc, char ** argv)
 	treeview.append_column(_("Antivirus update"), moldelcols.updated);
 	treeview.append_column(_("Scanned"), moldelcols.scanned);
 	treeview.append_column(_("Result"), moldelcols.result);
-	treeview.append_column(_("S.M.A.R.T."), moldelcols.result);
+	treeview.append_column(_("S.M.A.R.T."), moldelcols.smart);
 	for (const auto& row : state) {
 		if (row.size() != 6)
 			continue;
@@ -118,7 +118,7 @@ void iface_info(int argc, char ** argv)
 		r[moldelcols.updated] = row[2];
 		r[moldelcols.scanned] = row[3];
 		r[moldelcols.result] = row[4] == "true" ? _("Warning!") : "";
-		r[moldelcols.result] = row[5] == "true" ? _("Warning!") : "";
+		r[moldelcols.smart] = row[5] == "true" ? _("Warning!") : "";
 	}
 	window.show_all();
 	app->run(window, 1, argv);
